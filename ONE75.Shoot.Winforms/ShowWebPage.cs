@@ -9,9 +9,11 @@ namespace ONE75.Shoot.Winforms
 {
     public partial class ShowWebPage : Form
     {
+        // some of the data on the TomTom site is loaded async. 
+        // When the WebBrower control thinks the page is loaded, the page is still loading so I delay the screenshot a little
         private Timer _timer;
 
-        private const string DefaultUrl = "http://www.google.com";
+        private const string DefaultUrl = "http://routes.tomtom.com";
 
         /// <summary>
         /// Gets or sets the URL that the webbrowser control will display
@@ -107,15 +109,15 @@ namespace ONE75.Shoot.Winforms
             return fullPath;
         }
 
-        private void ShowDuration(string fullHtml)
+        private void ShowDuration(string textToSearch)
         {
-            if (string.IsNullOrEmpty(fullHtml))
+            if (string.IsNullOrEmpty(textToSearch))
                 return;
 
             var durationPattern = @"\d{1,}:\d{2}\s(hrs)"; // looks for text in the xx:xx hrs format
             var regex = new Regex(durationPattern);
 
-            var match = regex.Match(fullHtml);
+            var match = regex.Match(textToSearch);
             var matches = 0;
 
             while (match.Success)

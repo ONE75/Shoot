@@ -36,12 +36,11 @@
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browser = new System.Windows.Forms.WebBrowser();
-            this.mainMenu = new System.Windows.Forms.MenuStrip();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1.SuspendLayout();
             this.gbControls.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.mainMenu.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -112,13 +111,15 @@
             this.browser.Size = new System.Drawing.Size(883, 571);
             this.browser.TabIndex = 1;
             // 
-            // mainMenu
+            // menuStrip1
             // 
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
-            this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(908, 24);
-            this.mainMenu.TabIndex = 4;
-            this.mainMenu.Text = "menuStrip1";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miAbout});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(908, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // miAbout
             // 
@@ -126,7 +127,7 @@
             this.miAbout.Size = new System.Drawing.Size(52, 20);
             this.miAbout.Text = "About";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
-            // 
+           // 
             // ShowWebPage
             // 
             this.AcceptButton = this.btnGo;
@@ -136,19 +137,16 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbControls);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.mainMenu);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.mainMenu;
             this.Name = "ShowWebPage";
             this.Text = "Shoot";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.gbControls.ResumeLayout(false);
             this.gbControls.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.mainMenu.ResumeLayout(false);
-            this.mainMenu.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,7 +161,8 @@
         private System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.TextBox txtUrl;
-        private System.Windows.Forms.MenuStrip mainMenu;
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem miAbout;
     }
 }
